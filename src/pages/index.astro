@@ -1,11 +1,241 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Layout from "../layouts/Layout.astro";
+import IndexKnifeDescription from "../components/IndexKnifeDescription.astro";
 ---
 
 <Layout>
-	<Welcome />
+  <div class="glide">
+    <div class="glide__track" data-glide-el="track">
+      <ul class="glide__slides">
+        <li class="glide__slide">
+          <img
+            src="assets/images/slideshow/igor-bispo-sV5JRC3t71M-unsplash.jpg"
+            alt="Image 1"
+          />
+        </li>
+        <li class="glide__slide">
+          <img
+            src="assets/images/slideshow/markus-spiske-RUe01V7ECGI-unsplash.jpg"
+            alt="Image 2"
+          />
+        </li>
+        <li class="glide__slide">
+          <img
+            src="assets/images/slideshow/maxim-potkin-Y8AW0CvHk5E-unsplash.jpg"
+            alt="Image 3"
+          />
+        </li>
+      </ul>
+    </div>
+    <div class="glide__arrows" data-glide-el="controls">
+      <button class="glide__arrow glide__arrow--left" data-glide-dir="<"
+        ><i class="bx bx-lg bx-chevron-left"></i></button
+      >
+      <button class="glide__arrow glide__arrow--right" data-glide-dir=">"
+        ><i class="bx bx-lg bx-chevron-right"></i></button
+      >
+    </div>
+  </div>
+
+  <div class="content-wrapper">
+    <div id="featured">
+      <strong style="font-size: 1.15rem;"
+        >Quality Knives; Undeniable Price</strong
+      >
+      <h2 style="font-size: 2.5rem;">View our Featured Knives</h2>
+
+      <div class="new-carousel glide">
+        <div class="glide__track" data-glide-el="track">
+          <ul class="glide__slides">
+            <li class="glide__slide new-slide">
+              <img src="assets/images/knives/knife 1.png" alt="Image 1" />
+              <div class="slider__info">
+                <IndexKnifeDescription
+                  link="/collections/blacksteel"
+                  name="Blacksteel"
+                  description="The Blacksteel is a robust and versatile EDC knife that handles tough challenges throughout your day. From the start, it was designed with a lightweight internal frame and tough polymer handle scales that keep both weight and width to a minimum without sacrificing an ounce of functionality."
+                />
+              </div>
+            </li>
+            <li class="glide__slide new-slide">
+              <img src="assets/images/knives/knife 2.png" alt="Image 2" />
+              <div class="slider__info">
+                <IndexKnifeDescription
+                  link="/collections/ironwood"
+                  name="Ironwood"
+                  description="The Ironwood is a strong and stylish EDC knife, featuring durable handmade wooden handles for a natural grip and a high-strength blade for reliable performance. Balanced, ergonomic, and built to handle everyday tasks with ease."
+                />
+              </div>
+            </li>
+            <li class="glide__slide new-slide">
+              <img src="assets/images/knives/knife 3.png" alt="Image 3" />
+              <div class="slider__info">
+                <IndexKnifeDescription
+                  link="/collections/stealthblade"
+                  name="Stealthblade"
+                  description="The Stealthblade is a sleek, all-black EDC knife built for precision and reliability. With a durable, high-strength blade and a low-profile design, it’s made for effortless everyday carry. Lightweight, tactical, and always ready."
+                />
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Navigation Controls -->
+        <div class="glide__arrows" data-glide-el="controls">
+          <button class="glide__arrow glide__arrow--left" data-glide-dir="<"
+            ><i class="bx bx-md bx-chevron-left"></i></button
+          >
+          <button class="glide__arrow glide__arrow--right" data-glide-dir=">"
+            ><i class="bx bx-md bx-chevron-right"></i></button
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="text-align: center; color: red; opacity: .5; margin: 0 auto; margin-top: 10rem;">
+    <p style="margin: 0; font-family: 'Black Ops One', serif; font-family: 1.5rem;">Work in progress...</p>
+    <p style="margin: 0; font-family: 'Quantico', serif;">add a "See all button", our story, etc.</p>
+  </div>
+
+  <div style="margin-top: 15rem;"></div>
 </Layout>
+
+<style>
+  .glide__slide.new-slide {
+    height: auto;
+    padding-bottom: 5rem;
+    font-family: "Quantico", serif;
+  }
+  .glide__slide.new-slide > .slider__info {
+    width: 100%;
+    z-index: 3;
+    position: absolute;
+    bottom: 0;
+    opacity: 0;
+    padding-top: 2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent 100%);
+  }
+
+  .glide__slide.new-slide img {
+    padding: 0.5rem;
+    width: 100%;
+    transition:
+      transform 0.5s,
+      opacity 0.5s;
+  }
+
+  .glide__slide.new-slide {
+    position: relative;
+    transform: scale(0.75);
+    opacity: 0.25;
+    transition:
+      transform 0.5s,
+      opacity 0.5s;
+  }
+
+  .glide__slide--active.new-slide {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  .glide__slide--active.new-slide > .slider__info {
+    opacity: 1;
+  }
+
+  #featured {
+    padding-top: 7rem;
+  }
+
+  #featured h2 {
+    margin: 0;
+  }
+
+  .glide__slide {
+    height: 100svh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  .glide__slide img {
+    object-fit: cover;
+  }
+
+  .glide__arrow {
+    position: absolute;
+    display: block;
+    top: 50%;
+    z-index: 2;
+    color: white;
+    text-transform: uppercase;
+    height: 50%;
+    padding: 0 2rem;
+    background-color: transparent;
+    opacity: 0.5;
+    cursor: pointer;
+    border: 0;
+    transform: translateY(-50%);
+    line-height: 1;
+  }
+
+  .glide__arrow:focus {
+    outline: none;
+  }
+
+  .glide__arrow:hover {
+    opacity: 1;
+    background-color: rgba(0, 0, 0, 0.25);
+  }
+
+  .glide__arrow--left {
+    left: 0;
+    border-radius: 0 15px 15px 0;
+  }
+
+  .glide__arrow--right {
+    right: 0;
+    border-radius: 15px 0 0 15px;
+  }
+
+  .glide__arrow--disabled {
+    opacity: 0.33;
+  }
+
+  .glide--swipeable {
+    cursor: grab;
+    cursor: -moz-grab;
+    cursor: -webkit-grab;
+  }
+
+  .glide--dragging {
+    cursor: grabbing;
+    cursor: -moz-grabbing;
+    cursor: -webkit-grabbing;
+  }
+</style>
+
+<script is:inline src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
+<script>
+  new Glide(".glide", {
+    type: "carousel",
+    perView: 1,
+    autoplay: 4500,
+    hoverpause: true,
+    animationDuration: 2500,
+  }).mount();
+
+  const newGlide = new Glide(".new-carousel", {
+    type: "slide",
+    startAt: 0,
+    perView: 3,
+    focusAt: "center",
+    peek: { before: 50, after: 50 },
+    gap: 20,
+  });
+
+  newGlide.mount();
+</script>

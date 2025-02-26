@@ -1,22 +1,140 @@
+---
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+---
+
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/png" href="/assets/images/QK Logo White.png" />
+    <meta property="og:title" content="Quality Knives" />
+    <meta property="og:description" content="Premium EDC knives at a reasonable price. Find the perfect everyday carry knife for your needs." />
+    <meta property="og:image" content="assets/images/QK Logo White.png" />
+    <meta property="og:url" content="https://generictype.github.io/quality-knives" />
+    <meta property="og:type" content="website" />
+    <meta name="generator" content={Astro.generator} />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quantico:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <title>Quality Knives</title>
+  </head>
+  <body>
+    <Navbar />
+    <slot />
+    <Footer />
+    <svg
+      xmlns="//www.w3.org/2000/svg"
+      version="1.1"
+      class="svg-filters"
+      style="display:none;"
+    >
+      <defs>
+        <filter id="marker-shape">
+          <feTurbulence
+            type="fractalNoise"
+            baseFrequency="0 0.15"
+            numOctaves="1"
+            result="warp"></feTurbulence>
+          <feDisplacementMap
+            xChannelSelector="R"
+            yChannelSelector="G"
+            scale="30"
+            in="SourceGraphic"
+            in2="warp"></feDisplacementMap>
+        </filter>
+      </defs>
+    </svg>
+  </body>
 </html>
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
+<style is:global>
+  html,
+  body {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(15, 15, 18);
+    color: whitesmoke;
+    font-family: "Inter", serif;
+  }
+
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #111;
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #444;
+    cursor: grab;
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:active {
+    cursor: grabbing;
+    background: #222 !important;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #333;
+  }
+
+  .content-wrapper {
+    width: 90vw;
+    margin: 0 auto;
+  }
+
+  .realistic-marker-highlight {
+    position: relative;
+    color: #000;
+    /* font-family: "Kalam", serif; */
+    font-family: "Black Ops One", serif;
+    /* font-weight: 700; */
+    font-size: 1.75rem;
+  }
+
+  .realistic-marker-highlight:before {
+    content: "";
+    background-color: #fff;
+    width: 100%;
+    height: 1em;
+    position: absolute;
+    z-index: -1;
+    filter: url(#marker-shape);
+    left: -0.25em;
+    top: 0.1em;
+    padding: 0 0.25em;
+  }
+
+  ul, li {
+    list-style-type: none;
+    padding: 0;
+  }
 </style>

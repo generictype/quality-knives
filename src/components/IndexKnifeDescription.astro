@@ -1,0 +1,42 @@
+---
+interface Props {
+  link: string;
+  name: string;
+  description: string;
+}
+
+const { link, name, description } = Astro.props;
+---
+
+<span class="top">
+  <h2 style="margin: 0;">
+    <span style="margin-left: .5ch;" class="realistic-marker-highlight"
+      >{name}</span
+    >
+  </h2>
+  <a href={link}>Buy</a>
+</span>
+<p>
+  &emsp;{description}
+</p>
+
+<style>
+  .top {
+    width: 100%;
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .top a {
+    color: rgb(225, 225, 225);
+    text-decoration: none;
+    border: 1px solid rgba(225, 225, 225, 0.75);
+    border-radius: 4px;
+    padding: 0.25rem 1rem;
+    backdrop-filter: blur(5px);
+    transition: all 0.25s ease;
+  }
+  .top a:hover {
+    background-color: rgba(190, 190, 190, 0.5);
+  }
+</style>
