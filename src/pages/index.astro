@@ -9,20 +9,32 @@ import IndexKnifeDescription from "../components/IndexKnifeDescription.astro";
       <ul class="glide__slides">
         <li class="glide__slide">
           <img
-            src="assets/images/slideshow/igor-bispo-sV5JRC3t71M-unsplash.jpg"
+            src="assets/images/slideshow/harrison-kugler-kzPMPeUZ7gQ-unsplash.jpg"
             alt="Image 1"
           />
         </li>
         <li class="glide__slide">
           <img
-            src="assets/images/slideshow/markus-spiske-RUe01V7ECGI-unsplash.jpg"
+            src="assets/images/slideshow/igor-bispo-sV5JRC3t71M-unsplash.jpg"
             alt="Image 2"
           />
         </li>
         <li class="glide__slide">
           <img
-            src="assets/images/slideshow/maxim-potkin-Y8AW0CvHk5E-unsplash.jpg"
+            src="assets/images/slideshow/markus-spiske-RUe01V7ECGI-unsplash.jpg"
             alt="Image 3"
+          />
+        </li>
+        <li class="glide__slide">
+          <img
+            src="assets/images/slideshow/maxim-potkin-Y8AW0CvHk5E-unsplash.jpg"
+            alt="Image 4"
+          />
+        </li>
+        <li class="glide__slide">
+          <img
+            src="assets/images/slideshow/michal-bozek-Bd_ptblQtc0-unsplash.jpg"
+            alt="Image 5"
           />
         </li>
       </ul>
@@ -39,10 +51,8 @@ import IndexKnifeDescription from "../components/IndexKnifeDescription.astro";
 
   <div class="content-wrapper">
     <div id="featured">
-      <strong style="font-size: 1.15rem;"
-        >Quality Knives; Undeniable Price</strong
-      >
-      <h2 style="font-size: 2.5rem;">View our Featured Knives</h2>
+      <p>Quality Knives; Undeniable Price</p>
+      <h2>View our Featured Knives</h2>
 
       <div class="new-carousel glide">
         <div class="glide__track" data-glide-el="track">
@@ -51,7 +61,7 @@ import IndexKnifeDescription from "../components/IndexKnifeDescription.astro";
               <img src="assets/images/knives/knife 1.png" alt="Image 1" />
               <div class="slider__info">
                 <IndexKnifeDescription
-                  link="/collections/blacksteel"
+                  link="/collection/blacksteel"
                   name="Blacksteel"
                   description="The Blacksteel is a robust and versatile EDC knife that handles tough challenges throughout your day. From the start, it was designed with a lightweight internal frame and tough polymer handle scales that keep both weight and width to a minimum without sacrificing an ounce of functionality."
                 />
@@ -61,7 +71,7 @@ import IndexKnifeDescription from "../components/IndexKnifeDescription.astro";
               <img src="assets/images/knives/knife 2.png" alt="Image 2" />
               <div class="slider__info">
                 <IndexKnifeDescription
-                  link="/collections/ironwood"
+                  link="/collection/ironwood"
                   name="Ironwood"
                   description="The Ironwood is a strong and stylish EDC knife, featuring durable handmade wooden handles for a natural grip and a high-strength blade for reliable performance. Balanced, ergonomic, and built to handle everyday tasks with ease."
                 />
@@ -71,7 +81,7 @@ import IndexKnifeDescription from "../components/IndexKnifeDescription.astro";
               <img src="assets/images/knives/knife 3.png" alt="Image 3" />
               <div class="slider__info">
                 <IndexKnifeDescription
-                  link="/collections/stealthblade"
+                  link="/collection/stealthblade"
                   name="Stealthblade"
                   description="The Stealthblade is a sleek, all-black EDC knife built for precision and reliability. With a durable, high-strength blade and a low-profile design, it’s made for effortless everyday carry. Lightweight, tactical, and always ready."
                 />
@@ -93,19 +103,150 @@ import IndexKnifeDescription from "../components/IndexKnifeDescription.astro";
     </div>
   </div>
 
-  <div style="text-align: center; color: red; opacity: .5; margin: 0 auto; margin-top: 10rem;">
-    <p style="margin: 0; font-family: 'Black Ops One', serif; font-family: 1.5rem;">Work in progress...</p>
-    <p style="margin: 0; font-family: 'Quantico', serif;">add a "See all button", our story, etc.</p>
+  <div class="laser-engraving">
+    <div class="content">
+      <div>
+        <h2>Custom Laser Engraving</h2>
+        <p>Personalize your knife with custom engraving at no extra charge!</p>
+      </div>
+      <a class="button">Learn More</a>
+    </div>
   </div>
 
-  <div style="margin-top: 15rem;"></div>
+  <div class="content-wrapper">
+    <div id="our-story" class="two-grid">
+      <div class="text">
+        <div>
+          <h2>The Story of Quality Knives</h2>
+          <article>
+            &emsp;Founded in 1978 by master bladesmith Richard Calloway, Quality
+            Knives began as a small, family-run workshop in the heart of Oregon.
+            Richard, a former blacksmith with a passion for fine craftsmanship,
+            was dissatisfied with the mass-produced knives flooding the market.
+            He believed that every blade should be an extension of its
+            user—built for durability, precision, and balance.
+            <br /><br />
+            &emsp;With a forge in his backyard and a vision in his heart, Richard
+            started handcrafting knives for local hunters, chefs, and outdoor enthusiasts.
+            Word of his meticulously designed blades quickly spread, and demand soared
+            beyond his expectations. By the mid-1980s, Quality Knives had expanded
+            to a full-scale manufacturing facility, blending old-world forging techniques
+            with modern steel innovations.
+          </article>
+          <br /><br />
+          <a href="/collection" class="button">View Knives</a>
+        </div>
+      </div>
+      <div class="image"></div>
+    </div>
+
+    <div id="future" class="two-grid">
+      <div class="image"></div>
+      <div class="text">
+        <div class="sticky">
+          <h2>Our Future Plans</h2>
+          <article>
+            &emsp;The future of Quality Knives is driven by a deep respect for
+            tradition and an ambitious vision for innovation. Under Jonathan
+            Calloway’s leadership, the company is exploring new frontiers in
+            knife-making, focusing on sustainability, advanced technology, and
+            global reach. With an increasing demand for eco-conscious products,
+            Quality Knives is investing in recycled steel and responsibly
+            sourced handle materials, ensuring that craftsmanship and
+            environmental responsibility go hand in hand.
+            <br /><br />
+            &emsp;At the same time, the company is embracing modern advancements,
+            developing smart knives equipped with precision-monitoring technology
+            designed for professional chefs. This fusion of time-honored techniques
+            and cutting-edge innovation sets the stage for a new era in blade craftsmanship.
+            As Quality Knives expands into international markets, it continues to
+            collaborate with top culinary experts and outdoor professionals to refine
+            its designs and cater to diverse needs worldwide.
+            <br /><br />
+            &emsp;Despite its growth, the company remains dedicated to its roots,
+            preserving the artistry of traditional knife-making while pushing the
+            boundaries of design. With limited-edition, hand-forged collection and
+            a steadfast commitment to excellence, Quality Knives is shaping the future
+            of premium blades, ensuring that every knife crafted is a perfect balance
+            of durability, precision, and elegance.
+          </article>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top: 3rem;"></div>
 </Layout>
 
 <style>
+  #future .image {
+    background-image: url("https://images.unsplash.com/photo-1571775990544-465f405ca351?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  }
+  #our-story .image {
+    background-image: url("https://images.unsplash.com/photo-1579551813772-a55dd7f9cb42?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  }
+  .two-grid {
+    padding-top: 3rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .two-grid .image {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    aspect-ratio: 1/1;
+  }
+  .two-grid .text,
+  .two-grid .image {
+    margin: 3rem;
+  }
+  .two-grid div {
+    position: sticky;
+    top: 7rem;
+  }
+  .two-grid .text div > h2 {
+    font-family: "Quantico", serif;
+    font-size: 1.75rem;
+  }
+  .two-grid .text div > article {
+    font-family: "Courier Prime", serif;
+  }
+
+  .laser-engraving {
+    margin-top: 10rem;
+    background-image: url("/assets/images/jason-jarrach-ee0IOI2kIlE-unsplash.jpg");
+    border: 2px solid rgba(100, 100, 100, 0.25);
+    border-left: 0;
+    border-right: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center 35%;
+    background-attachment: fixed;
+    height: 60svh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .laser-engraving > .content {
+    margin-top: 5rem;
+    width: 70rem;
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .laser-engraving > .content h2 {
+    font-family: "Quantico", serif;
+    font-size: 2.25rem;
+    margin: 0;
+  }
+  .laser-engraving > .content p {
+    font-family: "Courier Prime", serif;
+  }
+
   .glide__slide.new-slide {
     height: auto;
     padding-bottom: 5rem;
-    font-family: "Quantico", serif;
+    font-family: "Courier Prime", serif;
   }
   .glide__slide.new-slide > .slider__info {
     width: 100%;
@@ -148,12 +289,21 @@ import IndexKnifeDescription from "../components/IndexKnifeDescription.astro";
   #featured {
     padding-top: 7rem;
   }
-
+  #featured p {
+    margin: 0;
+    font-size: 1.2rem;
+    font-family: "Courier Prime", serif;
+    font-weight: normal;
+  }
   #featured h2 {
     margin: 0;
+    font-size: 2.5rem;
+    font-family: "Quantico", serif;
+    transform: translateY(-10px);
   }
 
   .glide__slide {
+    padding-top: 7rem;
     height: 100svh;
     display: flex;
     justify-content: center;

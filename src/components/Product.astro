@@ -1,0 +1,51 @@
+---
+interface Props {
+  link: string;
+  name: string;
+  image: string;
+  price: string;
+}
+
+const { link, name, image, price } = Astro.props;
+---
+
+<a href={link} class="product">
+    <img width="225" height="225" src={image} alt={name} />
+    <p class="name"><strong>{name}</strong></p>
+    <p class="price">${price}</p>
+</a>
+
+<style>
+    .product {
+        text-decoration: none;
+        color: whitesmoke;
+        width: min-content;
+        padding: .5rem;
+        border-radius: 3px;
+        transition: .2s all ease-out;
+    }
+    .product:hover {
+        transform: scale(1.025);
+        background-color: rgb(23, 23, 26);
+    }
+    .product:hover img {
+        transform: scale(.975);
+    }
+    .product img {
+        background-color: rgb(20, 20, 23);
+        padding: .5rem;
+        transition: .2s all ease-out;
+    }
+    .product p {
+        margin: 0;
+    }
+    .product p.name {
+        margin-top: .15rem;
+        font-family: "Quantico", serif;
+        font-size: 1.05rem;
+    }
+    .product p.price {
+        font-family: "Courier Prime", serif;
+        font-size: .95rem;
+    }
+</style>

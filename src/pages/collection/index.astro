@@ -1,0 +1,98 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Product from "../../components/Product.astro";
+---
+
+<Layout>
+  <div class="header">
+    <div class="content">
+      <h1>Products</h1>
+      <p>
+        Here we have gathered all our knives and accessories so that you can
+        find the product that suits you best.
+      </p>
+    </div>
+  </div>
+  <div class="content-wrapper">
+    <div class="products-container">
+      <span class="notice">
+          <i class="bx bx-fw bx-md bx-filter"></i>
+          <p style="font-family: 'Quantico', serif;">3 products</p>
+      </span>
+      <div class="products">
+        <Product
+          link="/collection/blacksteel"
+          name="Blacksteel"
+          image="/assets/images/knives/knife 1.png"
+          price="64.99"
+        />
+        <Product
+          link="/collection/ironwood"
+          name="Ironwood"
+          image="/assets/images/knives/knife 2.png"
+          price="74.99"
+        />
+        <Product
+          link="/collection/stealthblade"
+          name="Stealthblade"
+          image="/assets/images/knives/knife 3.png"
+          price="54.99"
+        />
+      </div>
+    </div>
+    <h3
+      style="font-family: 'Quantico', serif; text-align: center; margin: 5rem 0;"
+    >
+      More coming soon...
+    </h3>
+  </div>
+</Layout>
+
+<style>
+  .products-container {
+    width: min-content;
+    margin: 0 auto;
+    margin-top: 3rem;
+  }
+  .products-container .notice {
+    display: inline-flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .products {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    gap: 2rem;
+  }
+  .content-wrapper {
+    width: 55vw !important;
+  }
+  .header {
+    background-image: url("https://images.unsplash.com/photo-1543751416-705d3e34d02a?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center 99%;
+    height: 40svh;
+    border-bottom: 2px solid rgba(100, 100, 100, 0.25);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .header > .content {
+    text-align: center;
+    width: 33.33vw;
+  }
+  .header > .content h1 {
+    margin: 0;
+    margin-bottom: 0.5rem;
+    font-family: "Quantico", serif;
+    font-size: 2.25rem;
+  }
+  .header > .content p {
+    margin: 0;
+    font-family: "Courier Prime", serif;
+  }
+</style>

@@ -1,0 +1,75 @@
+---
+import Layout from "./Layout.astro";
+
+interface Props {
+  name: string;
+  image: string;
+  price: string;
+  description: string;
+}
+
+const { description, name, image, price } = Astro.props;
+---
+
+<Layout>
+  <div style="margin-top: 10rem;"></div>
+  <div class="product-container">
+    <div class="image">
+      <img width="100%" src={image} alt={name} />
+    </div>
+    <div class="text">
+      <span class="title">
+        <h1>{name}</h1>
+        <p>${price}</p>
+      </span>
+      <article>&emsp;{description}</article>
+      <span class="laser-engraving">
+        <label class="checkbox-container"
+          >Add laser engraving [FREE]
+          <input type="checkbox" />
+          <div class="checkbox-custom"></div>
+        </label>
+      </span>
+      <a class="button">Order</a>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .product-container {
+    width: 70vw;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+  }
+  .product-container .image {
+    padding: 2rem;
+    background-color: rgb(20, 20, 23);
+  }
+  .product-container .text {
+    display: flex;
+    flex-direction: column;
+  }
+  .product-container .text .title {
+    display: inline-flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+  }
+  .product-container .text .title h1 {
+    margin: 0;
+    font-family: "Quantico", serif;
+  }
+  .product-container .text .title p {
+    margin: 0;
+    font-family: "Courier Prime", serif;
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+  .product-container .text > article {
+    font-family: "Courier Prime", serif;
+    white-space: pre-wrap;
+    flex-grow: 1;
+  }
+</style>

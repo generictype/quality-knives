@@ -10,9 +10,18 @@ import Footer from "../components/Footer.astro";
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/png" href="assets/images/QK Logo White.png" />
     <meta property="og:title" content="Quality Knives" />
-    <meta property="og:description" content="Premium EDC knives at a reasonable price. Find the perfect everyday carry knife for your needs." />
-    <meta property="og:image" content="https://generictype.github.io/quality-knives/assets/images/QK%20Logo%20White.png" />
-    <meta property="og:url" content="https://generictype.github.io/quality-knives" />
+    <meta
+      property="og:description"
+      content="Premium EDC knives at a reasonable price. Find the perfect everyday carry knife for your needs."
+    />
+    <meta
+      property="og:image"
+      content="https://generictype.github.io/quality-knives/assets/images/QK%20Logo%20White.png"
+    />
+    <meta
+      property="og:url"
+      content="https://generictype.github.io/quality-knives"
+    />
     <meta property="og:type" content="website" />
     <meta name="generator" content={Astro.generator} />
     <link
@@ -41,7 +50,10 @@ import Footer from "../components/Footer.astro";
       href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap"
       rel="stylesheet"
     />
-    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
     <title>Quality Knives</title>
   </head>
   <body>
@@ -84,6 +96,10 @@ import Footer from "../components/Footer.astro";
     background-color: rgba(15, 15, 18);
     color: whitesmoke;
     font-family: "Inter", serif;
+  }
+
+  * {
+    box-sizing: border-box;
   }
 
   ::-webkit-scrollbar {
@@ -133,8 +149,74 @@ import Footer from "../components/Footer.astro";
     padding: 0 0.25em;
   }
 
-  ul, li {
+  ul,
+  li {
     list-style-type: none;
     padding: 0;
+  }
+
+  a.button {
+    cursor: pointer;
+    color: rgb(225, 225, 225);
+    text-decoration: none;
+    border: 1px solid rgba(225, 225, 225, 0.75);
+    font-family: "Quantico", serif;
+    border-radius: 4px;
+    padding: 0.75rem 2rem;
+    backdrop-filter: blur(5px);
+    transition: all 0.25s ease;
+    text-align: center;
+  }
+  a.button:hover {
+    background-color: rgba(190, 190, 190, 0.5);
+  }
+  input[type="checkbox"] {
+    outline: 0;
+    border: 1px solid red;
+    cursor: pointer;
+    background: transparent;
+  }
+
+  .checkbox-container {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-family: "Quantico", serif;
+    color: rgb(225, 225, 225);
+    width: fit-content;
+    gap: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .checkbox-container input {
+    display: none;
+  }
+
+  .checkbox-custom {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 1;
+    border: 1px solid rgba(225, 225, 225, 0.75);
+    border-radius: 4px;
+    backdrop-filter: blur(5px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.25s ease;
+  }
+
+  .checkbox-container input:checked + .checkbox-custom {
+    background-color: rgba(190, 190, 190, 0.5);
+  }
+
+  .checkbox-custom::after {
+    content: "X";
+    font-size: 16px;
+    color: rgb(225, 225, 225);
+    display: none;
+  }
+
+  .checkbox-container input:checked + .checkbox-custom::after {
+    display: block;
   }
 </style>
