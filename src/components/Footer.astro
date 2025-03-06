@@ -63,15 +63,17 @@
   </div>
   <footer>
     <div class="container">
-      <span class="top">
+      <span class="top pc-ver">
         <ul class="address">
-            <li>Quality Knives LLC</li>
-            <li>38.8977° N, 77.0365° W</li>
-            <li>Tel: +1 (000) 000-0000</li>
+          <li>Quality Knives LLC</li>
+          <li>38.8977° N, 77.0365° W</li>
+          <li>Tel: +1 (000) 000-0000</li>
         </ul>
         <div class="payments">
           <i style="font-size: 1.25rem;" class="bx bxs-lock-alt"></i>
-          <span style="display: grid; grid-template-columns: repeat(3, 1fr); justify-items: center;">
+          <span
+            style="display: grid; grid-template-columns: repeat(3, 1fr); justify-items: center;"
+          >
             <i class="bx bx-md bxl-visa"></i>
             <i class="bx bx-md bxl-mastercard"></i>
             <i class="bx bx-md bxl-paypal"></i>
@@ -82,6 +84,30 @@
           <li>Quality Knives LLC</li>
           <li>All rights reserved.</li>
         </ul>
+      </span>
+      <span class="top mobile-ver" data-display="flex">
+        <div class="payments">
+          <i style="font-size: 1.25rem;" class="bx bxs-lock-alt"></i>
+          <span
+            style="display: grid; grid-template-columns: repeat(3, 1fr); justify-items: center;"
+          >
+            <i class="bx bx-md bxl-visa"></i>
+            <i class="bx bx-md bxl-mastercard"></i>
+            <i class="bx bx-md bxl-paypal"></i>
+          </span>
+        </div>
+        <span>
+          <ul class="address">
+            <li>Quality Knives LLC</li>
+            <li>38.8977° N, 77.0365° W</li>
+            <li>Tel: +1 (000) 000-0000</li>
+          </ul>
+          <ul class="copyright">
+            <li>© Copyright 2025</li>
+            <li>Quality Knives LLC</li>
+            <li>All rights reserved.</li>
+          </ul>
+        </span>
       </span>
       <span class="bottom">
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Assumenda
@@ -191,11 +217,16 @@
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    gap: .5rem;
+    gap: 0.5rem;
     align-items: center;
     font-family: "Courier Prime", serif;
   }
-  #footer-container footer > .container > .top {
+  #footer-container footer > .container > .top.mobile-ver {
+    flex-direction: column;
+    width: 100%;
+  }
+  #footer-container footer > .container > .top,
+  #footer-container footer > .container > .top.mobile-ver > span {
     display: inline-flex;
     justify-content: space-between;
     align-items: center;
@@ -203,8 +234,10 @@
   }
 
   #footer-container footer > .container > .top > .address,
-  #footer-container footer > .container > .top > .copyright {
-    font-size: .85rem;
+  #footer-container footer > .container > .top > .copyright,
+  #footer-container footer > .container > .top.mobile-ver > span > .address,
+  #footer-container footer > .container > .top.mobile-ver > span > .copyright {
+    font-size: 0.85rem;
   }
 
   #footer-container footer > .container > .top > .payments {
@@ -215,7 +248,29 @@
   }
 
   #footer-container footer > .container > .bottom {
-    font-size: .75rem;
-    padding-bottom: .5rem;
+    font-size: 0.75rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .mobile-ver {
+    display: none;
+  }
+
+  @media only screen and (max-width: 600px) {
+    .mobile-ver {
+      display: attr(data-display) !important;
+    }
+    .pc-ver {
+      display: none !important;
+    }
+    #footer-container .newsletter .container input,
+    #footer-container .newsletter .container button,
+    #footer-container .links,
+    #footer-container footer > .container {
+      width: 90%;
+    }
+    #footer-container .newsletter .container h2 {
+      line-height: 100%;
+    }
   }
 </style>

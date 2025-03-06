@@ -16,8 +16,8 @@ import Product from "../../components/Product.astro";
   <div class="content-wrapper">
     <div class="products-container">
       <span class="notice">
-          <i class="bx bx-fw bx-md bx-filter"></i>
-          <p style="font-family: 'Quantico', serif;">3 products</p>
+        <i class="bx bx-fw bx-md bx-filter"></i>
+        <p style="font-family: 'Quantico', serif;">3 products</p>
       </span>
       <div class="products">
         <Product
@@ -94,5 +94,28 @@ import Product from "../../components/Product.astro";
   .header > .content p {
     margin: 0;
     font-family: "Courier Prime", serif;
+  }
+
+  @media only screen and (max-width: 600px) {
+    .content {
+      width: 90% !important;
+    }
+
+    .products-container {
+      width: 90%;
+      margin: 0 auto;
+      margin-top: 3rem;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: 1fr;
+      justify-items: center;
+      gap: 2rem;
+    }
+
+    .content-wrapper {
+      width: 90% !important;
+    }
   }
 </style>

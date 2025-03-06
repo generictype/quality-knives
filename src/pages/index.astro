@@ -366,6 +366,65 @@ import IndexKnifeDescription from "../components/IndexKnifeDescription.astro";
     cursor: -moz-grabbing;
     cursor: -webkit-grabbing;
   }
+
+  @media only screen and (max-width: 600px) {
+    .glide__slide img {
+      transform: rotate(90deg);
+    }
+
+    #featured > h2 {
+      line-height: 100%;
+      margin-top: 0.5rem;
+    }
+
+    .laser-engraving > .content {
+      width: 90%;
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+    }
+    .laser-engraving > .content h2 {
+      font-family: "Quantico", serif;
+      font-size: 2.25rem;
+      margin: 0;
+      line-height: 100%;
+    }
+    .laser-engraving > .content p {
+      font-family: "Courier Prime", serif;
+    }
+
+    .two-grid {
+      grid-template-columns: 1fr;
+    }
+    .two-grid .image {
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center center;
+      aspect-ratio: 9/16 !important;
+    }
+    .two-grid .text {
+      z-index: 3;
+      /* background-color: rgba(0, 0, 0, .5); */
+    }
+    .two-grid .image {
+      filter: brightness(50%);
+    }
+    .two-grid .text,
+    .two-grid .image {
+      margin: 1rem;
+    }
+    .two-grid div {
+      position: sticky;
+    }
+    .two-grid .text div > h2 {
+      font-family: "Quantico", serif;
+      font-size: 1.75rem;
+      line-height: 100%;
+    }
+    .two-grid .text div > article {
+      font-family: "Courier Prime", serif;
+    }
+  }
 </style>
 
 <script is:inline src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
@@ -378,14 +437,20 @@ import IndexKnifeDescription from "../components/IndexKnifeDescription.astro";
     animationDuration: 2500,
   }).mount();
 
-  const newGlide = new Glide(".new-carousel", {
-    type: "slide",
-    startAt: 0,
-    perView: 3,
-    focusAt: "center",
-    peek: { before: 50, after: 50 },
-    gap: 20,
-  });
-
-  newGlide.mount();
+  if (window.matchMedia("(max-width: 600px)").matches) {
+    const newGlide = new Glide(".new-carousel", {
+      type: "carousel",
+      perView: 1,
+      animationDuration: 250,
+    }).mount();
+  } else {
+    const newGlide = new Glide(".new-carousel", {
+      type: "slide",
+      startAt: 0,
+      perView: 3,
+      focusAt: "center",
+      peek: { before: 50, after: 50 },
+      gap: 20,
+    }).mount();
+  }
 </script>

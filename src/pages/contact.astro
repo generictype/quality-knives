@@ -9,14 +9,14 @@ import Layout from "../layouts/Layout.astro";
       <h1>Contact Form</h1>
       <label>
         Name
-        <span>
+        <span id="name">
           <input type="text" placeholder="First" />
           <input type="text" placeholder="Last" />
         </span>
       </label>
       <label>
         Email
-        <span>
+        <span id="email">
           <input type="email" placeholder="Email Address" />
           <input type="email" placeholder="Confirm Email" />
         </span>
@@ -75,5 +75,14 @@ import Layout from "../layouts/Layout.astro";
     margin-top: 1rem;
     display: block;
     width: 100%;
+  }
+
+  @media only screen and (max-width: 600px) {
+    .content-wrapper {
+      width: 90% !important;
+    }
+    input {
+      width: 49.489%;
+    }
   }
 </style>
